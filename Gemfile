@@ -14,6 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
 
+gem 'protected_attributes'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
