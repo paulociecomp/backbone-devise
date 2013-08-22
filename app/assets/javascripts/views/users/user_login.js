@@ -6,12 +6,14 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 	},
 
 	initialize: function(){
+		this.user = new BackDevise.Models.User();
 		this.render();
 	},
 
 	auth: function(e){
 		e.preventDefault();
 		var $form = $(e.target);
+		var self = this;
 
 		$.ajax({
 			url: "/users/sign_in.json",
@@ -22,12 +24,14 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 				console.log(res);
 	    },
 			success: function(res){
-				// _this.user.set(res);
+				self.user.set(res);
+				new BackDevise.Views.Dashboard({user: self.user});
 			}
 		})
 	},
 
 	render: function(){
 		$(this.el).html(this.template());
+		$("#main").html(this.el);
 	}
 })

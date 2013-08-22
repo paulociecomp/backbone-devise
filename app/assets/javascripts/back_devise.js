@@ -3,12 +3,9 @@ window.BackDevise = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
-    new BackDevise.Routers.Index();
-    Backbone.history.start();
+  initialize: function(user) {
+  	var user = new BackDevise.Models.User(user);
+    new BackDevise.Routers.Index({user: user});
+    Backbone.history.start({root: "/"});
   }
 };
-
-$(document).ready(function(){
-  BackDevise.initialize();
-});

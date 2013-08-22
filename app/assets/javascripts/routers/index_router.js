@@ -1,19 +1,25 @@
 BackDevise.Routers.Index = Backbone.Router.extend({
 	routes: {
 		"" : "index",
-		"/signup" : "signup"
+		"index" : "index",
+		"signup" : "signup"
 	},
 
-	initialize: function(){
-		
+	initialize: function(options){
+		this.user = options.user;
 	},
 
 	index: function(){
-		var viewLogin = new BackDevise.Views.UserLogin();
-		$("#main").html(viewLogin.el);
+		if(this.user.get("email")){
+			var viewDashboard = new BackDevise.Views.Dashboard({user: this.user});
+		}
+		else{
+			var viewLogin = new BackDevise.Views.UserLogin();
+		}
 	},
 
 	signup: function(){
-		alert("epa")
+		var viewSignup = new BackDevise.Views.UserRegistration();
+		$("#main").html(viewSignup.el);
 	}
 })

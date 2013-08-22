@@ -1,0 +1,42 @@
+<div class="row-fluid">
+<div class="span4" >
+  <div class="box signup">
+
+    <div class="box-header">
+      <span class="title">Faça seu cadastro</span>
+    </div>
+
+    <form accept-charset="UTF-8" action="/users" class="simple_form form-horizontal" id="user_registration" method="post">
+      <div class="padded">
+        <div class="form-inputs">
+          <div class="control-group email required user_email">
+            <label class="email required control-label" for="user_email"><abbr title="required">*</abbr> Email
+            </label>
+            <div class="controls">
+              <input class="string email required" id="user_email" name="user[email]" required="required" size="50" type="email" value="" />
+            </div>
+          </div>
+          <div class="control-group password required user_password">
+            <label class="password required control-label" for="user_password"><abbr title="required">*</abbr> Senha
+            </label>
+            <div class="controls">
+              <input class="password required" id="user_password" name="user[password]" required="required" size="50" type="password" />
+            </div>
+          </div>
+          <div class="control-group password required user_password_confirmation">
+            <label class="password required control-label" for="user_password_confirmation"><abbr title="required">*</abbr> Confirmação de senha
+            </label>
+            <div class="controls">
+              <input class="password required" id="user_password_confirmation" name="user[password_confirmation]" required="required" size="50" type="password" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <input class="btn btn btn-blue btn-block" id="btn-save" name="commit" type="submit" value="Cadastrar" />
+        </div>
+      </div>
+</form>  
+</div>
+</div>
+</div>

@@ -9,6 +9,12 @@
 <body>
 
 <%= yield %>
-
+<script type="text/javascript">
+	$(function(){
+		$(document).ready(function(){
+		  BackDevise.initialize(<%= current_user.to_json.html_safe %>);
+		});
+	})
+</script>
 </body>
 </html>
