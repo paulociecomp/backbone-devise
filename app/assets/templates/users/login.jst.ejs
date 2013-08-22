@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="login box">
+
+      <div class="box-header">
+        <span class="title">Login</span>
+      </div>
+
+      <div class="box-content padded">
+        <form accept-charset="UTF-8" action="" class="simple_form separate-sessions" id="user_login" method="post">
+          <div style="margin:0;padding:0;display:inline">
+            <input name="utf8" type="hidden" value="&#x2713;" />
+          </div>
+          <div class="input-prepend">
+            <span class="add-on" href="#">
+              <i class="icon-user"></i>
+            </span>
+            <input id="user_email" class="string email" required="required" type="email" value="" size="50" name="user[email]" autofocus="autofocus">
+          </div>
+          
+          <br /><br />
+          
+          <div class="input-prepend">
+            <span class="add-on" href="#">
+              <i class="icon-key"></i>
+            </span>
+            <input id="user_password" class="password" required="required" type="password" size="50" name="user[password]">
+          </div>
+
+          <div class="control-group boolean optional user_remember_me">
+            <label class="boolean optional control-label" for="user_remember_me">Lembrar-me</label>
+            <div class="controls">
+              <input name="user[remember_me]" type="hidden" value="0" />
+              <label class="checkbox">
+                <input class="boolean optional" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+              </label>
+            </div>
+          </div>
+
+          <input class="btn btn btn-blue btn-block btn-login" name="commit" type="submit" value="Efetuar login" />
+        </form>
+      </div>
+    </div>
+
+    <a href="#/signup" class="btn btn-red btn-signup btn-block">Crie sua conta gratuitamente</a>
+  </div>
+</div>
