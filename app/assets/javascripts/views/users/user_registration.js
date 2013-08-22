@@ -28,6 +28,7 @@ BackDevise.Views.UserRegistration = Backbone.View.extend({
 
           $('.user_'+field).addClass('error');
           _(errors).each(function(error, i) {
+          	$controlGroup.children(".controls").find("span.help-inline").remove();
             $controlGroup.children(".controls").append('<span class="help-inline">'+ error +'</span>');
           });
         });

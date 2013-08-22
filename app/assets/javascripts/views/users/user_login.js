@@ -20,8 +20,9 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 			data: $form.serialize(),
 			dataType: "json",
 			type: "post",
-	    error: function(res){
-				console.log(res);
+	    error: function(response){
+				var result = $.parseJSON(response.responseText);
+				$(".box-content").prepend("<div class='alert alert-error'>"+ result['error'] +"</div>")
 	    },
 			success: function(res){
 				self.user.set(res);
