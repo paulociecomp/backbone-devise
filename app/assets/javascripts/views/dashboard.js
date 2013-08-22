@@ -18,7 +18,6 @@ BackDevise.Views.Dashboard = Backbone.View.extend({
 	},
 
 	render: function(){
-		console.log("dash")
 		$(this.el).html(this.template({user: this.user}));
 		$("#main").html(this.el);
 	}
