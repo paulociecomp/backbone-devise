@@ -22,6 +22,7 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 			type: "post",
 	    error: function(response){
 				var result = $.parseJSON(response.responseText);
+				$(".alert-error").remove();
 				$(".box-content").prepend("<div class='alert alert-error'>"+ result['error'] +"</div>")
 	    },
 			success: function(res){
