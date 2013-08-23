@@ -14,6 +14,9 @@ BackDevise.Views.UserRegistration = Backbone.View.extend({
 		e.preventDefault();
 		var $form = $(e.target);
 		var self = this;
+		var el = $(this.el);
+
+		el.find('input#btn-save').button('loading');
 
 		$.ajax({
 			url: "/users.json",
@@ -21,6 +24,7 @@ BackDevise.Views.UserRegistration = Backbone.View.extend({
 			dataType: "json",
 			type: "post",
 	    error: function(response){
+	    	el.find('input#btn-save').button('reset');
 	    	var result = $.parseJSON(response.responseText);
 
 				_(result.errors).each(function(errors,field) {
@@ -34,6 +38,7 @@ BackDevise.Views.UserRegistration = Backbone.View.extend({
         });
 	    },
 			success: function(res){
+				el.find('input#btn-save').button('reset');
 				self.user.set(res);
 				window.location = "/";
 			}

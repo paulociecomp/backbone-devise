@@ -14,6 +14,9 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 		e.preventDefault();
 		var $form = $(e.target);
 		var self = this;
+		var el = $(this.el);
+
+		el.find('input.btn-login').button('loading');
 
 		$.ajax({
 			url: "/users/sign_in.json",
@@ -21,11 +24,13 @@ BackDevise.Views.UserLogin = Backbone.View.extend({
 			dataType: "json",
 			type: "post",
 	    error: function(response){
+	    	el.find('input.btn-login').button('reset');
 				var result = $.parseJSON(response.responseText);
 				$(".alert-error").remove();
 				$(".box-content").prepend("<div class='alert alert-error'>"+ result['error'] +"</div>")
 	    },
 			success: function(res){
+				el.find('input.btn-login').button('reset');
 				self.user.set(res);
 				new BackDevise.Views.Dashboard({user: self.user});
 			}
